@@ -5,7 +5,7 @@ class CasesController < ApplicationController
     render json: {
       status: {
         data: {
-          user: RecordSerializer.new(User.first).serializable_hash[:data][:attributes]
+          cases: CaseSerializer.new(User.first.cases).serializable_hash[:data].map { |case_datum| case_datum[:attributes]}
         }
       }
     }, status: :ok
