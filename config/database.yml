@@ -74,13 +74,13 @@ test:
 # URL environment variable explicitly:
 #
 #   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
-  database: trakk_api_production
-  username: trakk_api
-  password: <%= ENV["TRAKK_API_DATABASE_PASSWORD"] %>
+  url: postgresql://trakk_api_production_user:6dp0dOgX4nz8elS8Offq36o3vcqqbiLy@dpg-cr5ttg2j1k6c7398tro0-a.frankfurt-postgres.render.com/trakk_api_production
+  database: trakk-staging
+  username: trakk_api_production_user
+  password: 6dp0dOgX4nz8elS8Offq36o3vcqqbiLy
